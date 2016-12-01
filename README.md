@@ -1,6 +1,21 @@
 # DOCKER
 
-1. Basic Bash commands
+### Installation (Ubuntu)
+===
+```sh
+# check the kernel supports docker (greather than v3.1)
+$ uname -r
+
+$ sudo apt update
+$ sudo apt install docker-engine
+$ sudo service docker start
+
+# test docker-engine
+$ sudo docker run hello-world
+```
+
+### 1. Basic Bash commands
+===
 ```sh
 docker --version
 docker-compose --version
