@@ -11,4 +11,4 @@ docker run --name [instance name] -d [image name] | docker run --name mongo-data
 docker ps -a | | display all running containers
 docker stop [container name] | docker stop mongo-db | stop container
 docker rm [container name] | docker rm mongo-db | delete container
-
+docker exec -it [containerID] bash | docker exec -it abc0123 bash | connect to bash cli inside container
