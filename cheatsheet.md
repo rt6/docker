@@ -1,4 +1,7 @@
-**Docker Cheatsheet**
+#Docker Cheatsheet#
+---
+
+##Start and Stop Containers
 ---
 
 Docker Command| Example | Description 
@@ -12,3 +15,9 @@ docker ps -a | | display all running containers
 docker stop [container name] | docker stop mongo-db | stop container
 docker rm [container name] | docker rm mongo-db | delete container
 docker exec -it [containerID] bash | docker exec -it abc0123 bash | connect to bash cli inside container
+
+## Build Container Images
+---
+Docker Command| Example | Description 
+---|--- | ---
+docker build -t [name]/[tag] . | docker build -t node/my-app | Create docker image from Dockerfile
