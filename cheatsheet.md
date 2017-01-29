@@ -20,4 +20,4 @@ docker exec -it [containerID] bash | docker exec -it abc0123 bash | connect to b
 ---
 Docker Command| Example | Description 
 ---|--- | ---
-docker build -t [name]/[tag] . | docker build -t node/my-app | Create docker image from Dockerfile
+docker build -t [name]/[tag] . | docker build -t node/my-app . | Create docker image from Dockerfile
