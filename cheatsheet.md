@@ -11,6 +11,7 @@ docker images || display current images
 docker search [image name] | docker search mongo | search for docker image
 docker pull [image name] | docker pull mongo | download docker image
 docker run --name [instance name] -d [image name] | docker run --name mongo-database -d mongo | create container and detach
+docker run -p [hostport]:[container port] -d [image name] | docker run -p 80080:8080 -d node | create container and forward ports
 docker ps -a | | display all running containers
 docker stop [container name] | docker stop mongo-db | stop container
 docker rm [container name] | docker rm mongo-db | delete container
