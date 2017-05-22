@@ -84,6 +84,8 @@ docker exec -it my-container-name mysql -uroot -p
 # link another app to mysql container (if port forwarding was not activated)
 docker run --name app-container-name --link my-container-name:mysql -d app-that-uses-mysql
 
+* IMPORTANT: you will need to create mysql users with the docker inet addr (eg. 172.17.0.1) so that other docker containers can access this mysql docker container
+
 
 ```
 
