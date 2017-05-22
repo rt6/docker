@@ -46,3 +46,44 @@ docker rmi <imageName>
 docker rmi nginx
 
 ```
+
+### Create containers
+===
+
+### Mysql
+```sh
+# download container image from docker hub
+docker pull mysql/mysql-server:5.6
+docker pull mysql/mysql-server:5.7
+
+# display images on local machine
+docker images
+
+# create and run docker container
+# ------
+docker run --name my-container-name -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql/mysql-server:tag
+
+# use datadir on host
+docker run --name my-container-name -v /host/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql/mysql-server:tag
+
+# use password in text file on host
+docker run --name my-container-name -e MYSQL_ROOT_PASSWORD=/tmp/password.txt -v /host/password.txt:/tmp/password.txt  -d mysql/mysql-server:tag  
+
+# use datadir and password text file on host, and forward container port 3306 to host port 3306
+docker run --name my-container-name -v /host/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=/tmp/password.txt -v /host/password.txt:/tmp/password.txt -p 3306:3306 -d mysql/mysql-server:5.6
+
+
+
+# check that container was created and running
+docker ps  -a
+
+# connect to mysql client inside container
+docker exec -it my-container-name mysql -uroot -p
+
+
+# link another app to mysql container (if port forwarding was not activated)
+docker run --name app-container-name --link my-container-name:mysql -d app-that-uses-mysql
+
+
+```
+
