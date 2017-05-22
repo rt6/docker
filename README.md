@@ -50,7 +50,7 @@ docker rmi nginx
 ### Create containers
 ===
 
-### Mysql
+### Setup MySql Server using Docker container
 ```sh
 # download container image from docker hub
 docker pull mysql/mysql-server:5.6
