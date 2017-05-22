@@ -95,7 +95,7 @@ docker run --name app-container-name --link my-container-name:mysql -d app-that-
 
 Reverse proxy `www.domain.name/app-name` to docker container port number
 
-```
+```sh
 # remember to include the trailing "/" in the proxy pass, otherwise the entire URI will be passed upstream
 location /docker-app {
     rewrite /docker-app(.*) /$1  break;
