@@ -106,3 +106,30 @@ location /docker-app {
     proxy_set_header   Host $host;
 ```
 
+
+### Create your own Docker Images to make containers
+
+1) Create a file called `Dockerfile`
+```
+FROM ubuntu
+RUN apt-get update 
+RUN apt-get install –y nginx 
+CMD [“echo”,”Image created”] 
+```
+
+2) Build the image
+
+Note that image-name must be in lowercase.  Tag can be the version number, eg. web-server:0.1
+```sh
+sudo docker build -t image-name:tag .
+```
+
+3) Check that the image has been created
+```sh
+sudo docker images
+```
+
+4) Create Docker images as normal
+```sh
+sudo docker run ...
+```
