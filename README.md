@@ -146,5 +146,7 @@ docker rm $(docker ps -a -q)
 # delete are images that are tagged <none>
 docker rmi $(sudo docker images -f "dangling=true" -q)
 
+# copy file to docker container
+docker cp local.file container-name:/destination/path/
 
 ```
