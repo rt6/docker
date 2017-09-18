@@ -143,4 +143,8 @@ docker stop $(docker ps -a -q)
 # delete all containers
 docker rm $(docker ps -a -q)
 
+# delete are images that are tagged <none>
+docker rmi $(sudo docker images -f "dangling=true" -q)
+
+
 ```
