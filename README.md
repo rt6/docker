@@ -133,3 +133,14 @@ sudo docker images
 ```sh
 sudo docker run ...
 ```
+
+
+### Useful commands
+```sh
+# stop all containers
+docker stop $(docker ps -a -q)
+
+# delete all containers
+docker rm $(docker ps -a -q)
+
+```
